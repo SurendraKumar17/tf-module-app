@@ -217,9 +217,9 @@ resource "aws_lb_listener" "frontend" {
   load_balancer_arn = var.alb_arn
   port              = "443"
   protocol          = "HTTPS"
-#   ssl_policy        = "ELBSecurityPolicy-2016-08"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
 #   certificate_arn   = "arn:aws:acm:us-east-1:633788536644:certificate/e0de402e-a390-4600-a292-bf3b5b926201"
-
+    certificate_arn   = "arn:aws:elasticloadbalancing:us-east-1:869322169918:listener/app/dev-public-alb/ede7828718d8fd71/17e10c66ee4b4246"
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.target_group.arn
