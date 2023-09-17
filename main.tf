@@ -241,4 +241,4 @@ resource "aws_lb_listener" "frontend" {
 #       status_code = "HTTP_301"
 #     }
 #   }
-}
+# }
