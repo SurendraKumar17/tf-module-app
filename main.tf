@@ -226,19 +226,19 @@ resource "aws_lb_listener" "frontend" {
   }
 }
 
-resource "aws_lb_listener" "frontend_http" {
-  count             = var.listener_priority == 0 ? 1 : 0
-  load_balancer_arn = var.alb_arn
-  port              = "80"
-  protocol          = "HTTP"
-
-  default_action {
-    type = "redirect"
-
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
-  }
+# resource "aws_lb_listener" "frontend_http" {
+#   count             = var.listener_priority == 0 ? 1 : 0
+#   load_balancer_arn = var.alb_arn
+#   port              = "80"
+#   protocol          = "HTTP"
+#
+#   default_action {
+#     type = "redirect"
+#
+#     redirect {
+#       port        = "443"
+#       protocol    = "HTTPS"
+#       status_code = "HTTP_301"
+#     }
+#   }
 }
